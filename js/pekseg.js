@@ -4,11 +4,11 @@ app.run(function($rootScope, $locale) {
     $locale.NUMBER_FORMATS.GROUP_SEP = ".";
     $locale.NUMBER_FORMATS.DECIMAL_SEP = ",";
 
-    $rootScope.title = .................................................;
-    $rootScope.subtitle = .................................................;
-    $rootScope.company = .................................................;
-    $rootScope.author = .................................................;
-    $rootScope.penznem = .................................................;
+    $rootScope.title = "Házi Pékség";
+    $rootScope.subtitle = "Szoftverfejleszttő és tesztelő Viszgafeladat";
+    $rootScope.company = "Bajai SZC Türr István Technikum";
+    $rootScope.author = "dechev Dániel Ivanov";
+    $rootScope.penznem = "Ft";
 
     $rootScope.rendelesek = [];
     if (sessionStorage.getItem('peksegUser')) {
