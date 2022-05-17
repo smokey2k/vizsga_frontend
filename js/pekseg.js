@@ -24,30 +24,65 @@ app.config(function($routeProvider) {
     $routeProvider
     .when('/', {
         templateUrl: 'views/termeklista.html',
-        controller: 'productCtrl'
+        controller: 'productCtrl',
+        resolve: function() {
+            if (!$rootScope.loggedIn) {
+                $location.path('/termeklista')
+            }
+          }
     })
     .when('/reg', {
         templateUrl: 'views/regisztracio.html',
-        controller: 'loginCtrl'
+        controller: 'loginCtrl',
+        resolve: function() {
+            if (!$rootScope.loggedIn) {
+                $location.path('/termeklista')
+            }
+          }
     })
     .when('/kosar', {
         templateUrl: 'views/kosar.html',
-        controller: 'carCtrl'
+        controller: 'carCtrl',
+        resolve: function() {
+            if (!$rootScope.loggedIn) {
+                $location.path('/termeklista')
+            }
+          }
     })
     .when('/termekek', {
         templateUrl: 'views/termekek.html',
         controller: 'productCtrl',
+        resolve: function() {
+            if (!$rootScope.loggedIn) {
+                $location.path('/')
+            }
+          }
     })
     .when('/felhasznalok', {
         templateUrl: 'views/felhazsnalok.html',
         controller: 'userCtrl',
+        resolve: function() {
+            if (!$rootScope.loggedIn) {
+                $location.path('/')
+            }
+          }
     })
     .when('/rendelesek', {
         templateUrl: 'views/rendelesek.html',
         controller: 'orderCtrl',
+        resolve: function() {
+            if (!$rootScope.loggedIn) {
+                $location.path('/')
+            }
+          }
     })
     .when('/stat', {
         templateUrl: 'views/statisztika.html',
         controller: 'statCtrl',
+        resolve: function() {
+            if (!$rootScope.loggedIn) {
+                $location.path('/')
+            }
+          }
     })
 });
